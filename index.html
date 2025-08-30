@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aara Farms - Fresh Quality Poultry Since 2018</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #1a73e8;
+            --secondary-blue: #4285f4;
+            --light-blue: #e8f0fe;
+            --dark-blue: #0d47a1;
+            --cta-orange: #ff6d00;
+            --dark-orange: #e65100;
+            --accent-teal: #26a69a;
+            --background: #f8f9fa;
+            --text: #333;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+            background-color: var(--white);
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--cta-orange);
+        }
+        
+        section {
+            padding: 5rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--cta-orange);
+            color: var(--white);
+            box-shadow: 0 4px 8px rgba(255, 109, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(230, 81, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .btn-tertiary {
+            background-color: var(--accent-teal);
+            color: var(--white);
+            box-shadow: 0 4px 8px rgba(38, 166, 154, 0.3);
+        }
+        
+        .btn-tertiary:hover {
+            background-color: #1e887e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(30, 136, 126, 0.4);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+        
+        .logo p {
+            font-size: 0.8rem;
+            color: var(--secondary-blue);
+            margin: 0;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin: 0 1rem;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-cta .btn {
+            margin-left: 1rem;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 8rem 1rem 5rem;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 100% 100%;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .feature i {
+            margin-right: 0.5rem;
+            color: var(--light-blue);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-blue);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            text-align: left;
+        }
+        
+        .about-text h2:after {
+            left: 0;
+            transform: none;
+        }
+        
+        .about-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .about-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .about-list i {
+            color: var(--secondary-blue);
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+        
+        .about-image {
+            background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,50 L100,50 L100,100 L0,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 50% 50%;
+            transform: rotate(45deg);
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-blue);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-icon {
+            background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .product-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .product-features i {
+            color: var(--secondary-blue);
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light-blue);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--cta-orange);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            background: linear-gradient(45deg, var(--cta-orange), var(--dark-orange));
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .service-features i {
+            color: var(--secondary-blue);
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+        }
+        
+        /* Quality Section */
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .quality-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .quality-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .quality-item i {
+            font-size: 2.5rem;
+            color: var(--secondary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .guarantee-banner {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-blue);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item:hover:before {
+            opacity: 1;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-teal);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-rating {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-blue);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-blue);
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--secondary-blue);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .map-container {
+            grid-column: 1 / -1;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 4rem 1rem 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-teal);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-teal);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-teal);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .products-grid,
+            .services-grid,
+            .testimonials-grid,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .quality-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 2rem 0;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .header-cta .btn {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .products-grid,
+            .services-grid,
+            .testimonials-grid,
+            .footer-content,
+            .quality-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>AARA FARMS</h1>
+                <p>Fresh Quality Poultry Since 2018</p>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#quality">Quality & Safety</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="header-cta">
+                <a href="tel:+919500436688" class="btn btn-primary">Call Now</a>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Fresh Quality Poultry from Coimbatore's Trusted Supplier</h1>
+            <p>Serving Saravanampatti and surrounding areas for 6+ years with premium fresh chicken, country chicken, and duck meat.</p>
+            
+            <div class="hero-features">
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <span>4.8★ Customer Rating</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>6+ Years of Experience</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <span>Daily Fresh Supply</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-store"></i>
+                    <span>Wholesale & Retail Available</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-home"></i>
+                    <span>Home Delivery Service</span>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Order Now</a>
+                <a href="#products" class="btn btn-secondary">View Products</a>
+                <a href="tel:+919500436688" class="btn btn-tertiary">Call +91-95004-36688</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Aara Farms</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Company Overview</h3>
+                    <p>Established in 2018, Aara Farms has been Coimbatore's trusted name in quality poultry products. Located in the heart of Saravanampatti, we have built our reputation on delivering fresh, high-quality chicken, country chicken (Naatu Kozhi), and duck meat to our valued customers.</p>
+                    
+                    <h3>Mission Statement</h3>
+                    <p>To provide the freshest, highest quality poultry products while maintaining the highest standards of hygiene and customer service.</p>
+                    
+                    <h3>Why Choose Us</h3>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle"></i> Over 6 years of experience in poultry retail</li>
+                        <li><i class="fas fa-check-circle"></i> Consistently rated 4.8/5 by satisfied customers</li>
+                        <li><i class="fas fa-check-circle"></i> Daily fresh supply directly from trusted farms</li>
+                        <li><i class="fas fa-check-circle"></i> Strict quality control and hygiene protocols</li>
+                        <li><i class="fas fa-check-circle"></i> Competitive wholesale and retail pricing</li>
+                        <li><i class="fas fa-check-circle"></i> Convenient home delivery service</li>
+                        <li><i class="fas fa-check-circle"></i> Deep understanding of local preferences</li>
+                    </ul>
+                    
+                    <h3>Location Advantage</h3>
+                    <p>Strategically located in Varathottam Bose Garden, Saravanampatti, we serve customers across Coimbatore with easy accessibility and prompt service.</p>
+                </div>
+                
+                <div class="about-image">
+                    <i class="fas fa-image"></i> Farm Image Placeholder
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Our Fresh Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Fresh Chicken</h3>
+                        <p>Premium quality fresh chicken, cleaned and prepared daily</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Daily fresh supply</li>
+                            <li><i class="fas fa-check"></i> Properly cleaned and dressed</li>
+                            <li><i class="fas fa-check"></i> Available in various cuts</li>
+                            <li><i class="fas fa-check"></i> Wholesale and retail quantities</li>
+                        </ul>
+                        <p class="product-price">Competitive market rates</p>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-egg"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Country Chicken (Naatu Kozhi)</h3>
+                        <p>Traditional free-range country chicken with authentic taste</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Naturally raised</li>
+                            <li><i class="fas fa-check"></i> Rich in nutrients</li>
+                            <li><i class="fas fa-check"></i> Traditional taste</li>
+                            <li><i class="fas fa-check"></i> Popular local variety</li>
+                        </ul>
+                        <p class="product-price">Premium pricing for premium quality</p>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Duck Meat</h3>
+                        <p>Fresh duck meat for special occasions and culinary preferences</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Fresh and tender</li>
+                            <li><i class="fas fa-check"></i> Properly processed</li>
+                            <li><i class="fas fa-check"></i> Available on order</li>
+                            <li><i class="fas fa-check"></i> Special occasion favorite</li>
+                        </ul>
+                        <p class="product-price">Available on request</p>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="product-content">
+                        <h3>Processed Chicken Products</h3>
+                        <p>Ready-to-cook chicken products for convenience</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Marinated options</li>
+                            <li><i class="fas fa-check"></i> Cut and cleaned</li>
+                            <li><i class="fas fa-check"></i> Vacuum packed</li>
+                            <li><i class="fas fa-check"></i> Extended shelf life</li>
+                        </ul>
+                        <p class="product-price">Value pricing for convenience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Wholesale Supply</h3>
+                        <p>Bulk supply for restaurants, caterers, and retailers</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Competitive wholesale pricing</li>
+                            <li><i class="fas fa-check"></i> Regular supply contracts available</li>
+                            <li><i class="fas fa-check"></i> Custom quantity orders</li>
+                            <li><i class="fas fa-check"></i> Quality assurance guarantee</li>
+                            <li><i class="fas fa-check"></i> Flexible payment terms</li>
+                            <li><i class="fas fa-check"></i> Dedicated account management</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Retail Sales</h3>
+                        <p>Direct sales to individual customers and families</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Fresh daily arrivals</li>
+                            <li><i class="fas fa-check"></i> Various quantity options</li>
+                            <li><i class="fas fa-check"></i> Custom cuts on request</li>
+                            <li><i class="fas fa-check"></i> Convenient shopping experience</li>
+                            <li><i class="fas fa-check"></i> Expert advice and recommendations</li>
+                            <li><i class="fas fa-check"></i> Quality guarantee</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Home Delivery</h3>
+                        <p>Convenient delivery service across Coimbatore</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Delivery across Saravanampatti and nearby areas</li>
+                            <li><i class="fas fa-check"></i> Same-day delivery available</li>
+                            <li><i class="fas fa-check"></i> Temperature-controlled transport</li>
+                            <li><i class="fas fa-check"></i> Safe and hygienic packaging</li>
+                            <li><i class="fas fa-check"></i> Contactless delivery options</li>
+                            <li><i class="fas fa-check"></i> Flexible delivery timing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Processing</h3>
+                        <p>Tailored processing services for specific requirements</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Custom cuts and portions</li>
+                            <li><i class="fas fa-check"></i> Special preparation methods</li>
+                            <li><i class="fas fa-check"></i> Marination services</li>
+                            <li><i class="fas fa-check"></i> Packaging as per requirements</li>
+                            <li><i class="fas fa-check"></i> Bulk processing for events</li>
+                            <li><i class="fas fa-check"></i> Professional consultation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Safety Section -->
+    <section id="quality">
+        <div class="container">
+            <h2>Quality Assurance & Food Safety</h2>
+            <p class="text-center">At Aara Farms, quality and safety are not just priorities – they are our foundation. We maintain the highest standards at every step of our process.</p>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    <h3>Hygienic Processing</h3>
+                    <p>All our products are processed in clean, sanitized environments following strict hygiene protocols.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <i class="fas fa-truck-loading"></i>
+                    <h3>Fresh Delivery</h3>
+                    <p>We maintain cold chain integrity from our facility to your doorstep to ensure freshness.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Quality Checks</h3>
+                    <p>Rigorous quality checks at multiple stages to ensure only the best products reach you.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Trained Staff</h3>
+                    <p>Our staff is trained in food safety practices and hygiene maintenance.</p>
+                </div>
+            </div>
+            
+            <div class="guarantee-banner">
+                <h3>Our Quality Guarantee</h3>
+                <p>We stand behind the quality of our products. If you're not satisfied with your purchase, we'll make it right.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <i class="fas fa-camera"></i> Product Photos
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-images"></i> Facility Images
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-photo-video"></i> Processing Area
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-image"></i> Staff at Work
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-camera-retro"></i> Delivery Vehicle
+                </div>
+                <div class="gallery-item">
+                    <i class="fas fa-file-image"></i> Quality Control
+                </div>
+            </div>
+            <p class="text-center" style="margin-top: 2rem;">Photo placeholders - Add your actual product and facility images here</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Best chicken quality in Coimbatore! Always fresh and properly cleaned. Aara Farms has been our family's trusted supplier for years."</p>
+                    <p class="testimonial-author">- Priya, Saravanampatti</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Excellent service and quality. Their home delivery is very convenient and hygienic. The country chicken is absolutely delicious!"</p>
+                    <p class="testimonial-author">- Rajesh, Ganapathy</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"As a restaurant owner, I can say their wholesale service is reliable and consistent. Quality is always maintained."</p>
+                    <p class="testimonial-author">- Murugan, Restaurant Owner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Aara Farms<br>
+                            Varathottam Bose Garden<br>
+                            Saravanampatti<br>
+                            Coimbatore - 641035<br>
+                            Tamil Nadu, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>Primary: +91-95004-36688</p>
+                            <p>WhatsApp: +91-95004-36688</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@aarafarmscoimbatore.com</p>
+                            <p>orders@aarafarmscoimbatore.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday to Sunday<br>
+                            6:00 AM - 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" required pattern="[6-9]{1}[0-9]{9}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="product">Product Interest*</label>
+                            <select id="product" required>
+                                <option value="">Select a product</option>
+                                <option value="fresh-chicken">Fresh Chicken</option>
+                                <option value="country-chicken">Country Chicken</option>
+                                <option value="duck-meat">Duck Meat</option>
+                                <option value="bulk-orders">Bulk Orders</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantity">Quantity Required</label>
+                            <input type="text" id="quantity">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message/Special Requirements</label>
+                            <textarea id="message" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.195835482996!2d76.925226!3d11.101300000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDA2JzA0LjciTiA3NsKwNTUnMzAuOCJF!5e0!3m2!1sen!2sin!4v1623932000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>AARA FARMS</h3>
+                <p>Fresh Quality Poultry Since 2018</p>
+                <p>Coimbatore's trusted poultry supplier for over 6 years.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Products</h3>
+                <ul class="footer-links">
+                    <li><a href="#products">Fresh Chicken</a></li>
+                    <li><a href="#products">Country Chicken (Naatu Kozhi)</a></li>
+                    <li><a href="#products">Duck Meat</a></li>
+                    <li><a href="#products">Processed Chicken Products</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact & Social</h3>
+                <p>Saravanampatti, Coimbatore</p>
+                <p>Phone: +91-95004-36688</p>
+                <p>Email: info@aarafarmscoimbatore.com</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Aara Farms. All rights reserved. | Designed with care for quality poultry supply.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form Validation
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name');
+            const phone = document.getElementById('phone');
+            const product = document.getElementById('product');
+            
+            let isValid = true;
+            
+            if (!name.value.trim()) {
+                isValid = false;
+                highlightError(name);
+            } else {
+                removeHighlight(name);
+            }
+            
+            if (!phone.value.trim() || !phone.checkValidity()) {
+                isValid = false;
+                highlightError(phone);
+            } else {
+                removeHighlight(phone);
+            }
+            
+            if (!product.value) {
+                isValid = false;
+                highlightError(product);
+            } else {
+                removeHighlight(product);
+            }
+            
+            if (isValid) {
+                // In a real implementation, you would submit the form data to a server
+                alert('Thank you for your message! We will contact you shortly.');
+                contactForm.reset();
+            }
+        });
+        
+        function highlightError(field) {
+            field.style.borderColor = 'red';
+        }
+        
+        function removeHighlight(field) {
+            field.style.borderColor = '#ddd';
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
