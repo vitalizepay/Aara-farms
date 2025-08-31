@@ -522,14 +522,22 @@
             margin-bottom: 1rem;
         }
         
-        .guarantee-banner {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            color: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
+        /* Make the guarantee heading visible on blue background */
+        .guarantee-banner h1,
+        .guarantee-banner h2,
+        .guarantee-banner h3,
+        .guarantee-banner .section-title,
+        .guarantee-banner .text-gradient {
+              /* kill any gradient/text-clip utilities it inherits */
+            background: none !important;
+            -webkit-background-clip: border-box !important;
+            background-clip: border-box !important;
+            -webkit-text-fill-color: #fff !important;
+            color: #fff !important;
+            mix-blend-mode: normal !important;   /* in case a blend was applied */
+            text-shadow: 0 1px 2px rgba(0,0,0,.25); /* optional contrast */
         }
+
         
         /* Gallery Section */
         .gallery {
