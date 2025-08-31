@@ -97,15 +97,22 @@
         }
         
         .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-blue);
-            border: 2px solid var(--primary-blue);
+            background-color: rgba(255,255,255,.12);
+            color: #fff;
+            border: 2px solid rgba(255,255,255,.7);
+            transition: background-color .2s, color .2s, border-color .2s, transform .2s;
         }
         
-        .btn-secondary:hover {
-            background-color: var(--primary-blue);
-            color: var(--white);
+        .btn-secondary:hover{
+            background-color: #fff;
+            color: var(--primary-blue);
+            border-color: #fff;
             transform: translateY(-3px);
+        }
+
+        .btn-secondary:focus-visible{
+            outline: 3px solid #fff;
+            outline-offset: 2px;
         }
         
         .btn-tertiary {
